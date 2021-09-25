@@ -1,0 +1,27 @@
+{
+	"name" : "Sample Text",
+	"components" : 
+	{
+		"life" :
+		{
+			"isAlive" : true
+		},
+		"transform" :
+		{
+			"position" : { "x":0, "y":0, "z":0 },
+			"direction" : { "x":0, "y":0, "z":1 },
+			"scale" : { "x":0, "y":0, "z":0 }
+		},
+		"mesh" :
+		{
+			"source" : "https://threejs.org/examples/models/fbx/Samba%20Dancing.fbx"
+		},
+		"axis" :
+		{
+			"direction" : { "x":0, "y":0 },
+			"canJump" : false,
+			"moveSpeed" : 1,
+			"jumpSpeed" : 5
+		}
+	}
+}
