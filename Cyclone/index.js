@@ -1,6 +1,6 @@
-import { sampleEntity } from "/Entities/Actors/Characters/SampleEntity.js";
+import { sampleEntity } from "./Entities/Actors/Characters/SampleEntity.js";
 
-import { sampleSystem } from "/Systems/SampleSystem.js";
+import { sampleSystem } from "./Systems/SampleSystem.js";
 
 const entities = 
 {
