@@ -8,7 +8,7 @@ const entities =
 };
 const systems =
 {
-	SampleSystem
+	sampleSystem
 };
 
 export const module = 
