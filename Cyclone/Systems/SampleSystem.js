@@ -1,4 +1,4 @@
-export var sampleSystem
+export var sampleSystem = 
 {
 	requirements : [ "sampleComponent","transform" ],
 	Update : function(entity)
