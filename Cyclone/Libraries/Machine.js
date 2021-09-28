@@ -3,12 +3,15 @@ export const machine = {
 	Update : function(entities, systems, algorithm) 
 	{
 		if (entities === undefined || systems === undefined || algorithm === undefined) return;
-		readyEntities = AcquireReadyEntities(system, entities, algorithm);
-		console.log(readyEntities);
 		algorithm.LoopThrough
 		(	
 			systems,
-			function(system){ algorithm.LoopThrough(readyEntities, system.Update); }
+			function(system)
+			{
+				readyEntities = AcquireReadyEntities(system, entities, algorithm);
+				console.log(readyEntities);
+				algorithm.LoopThrough(readyEntities, system.Update); 
+			}
 		);
 	},
 	End : function() { console.log("I SAID THERE IS AN ALIEN BUT YOU DON'T EVER LISTEN TO ME"); }
