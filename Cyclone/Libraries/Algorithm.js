@@ -49,7 +49,7 @@ function LinearLoop(pool, action)
 		try { action(pool[i]); } 
 		catch (err) 
 		{
-			console.log("Provided action is not a function, or does not accept the proper arguments."); 
+			console.log(err); 
 			console.log("Terminating the loop ..."); 
 			break;
 		}
