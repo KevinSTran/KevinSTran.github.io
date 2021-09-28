@@ -13,7 +13,7 @@ export const algorithm =
 		try { this.loopAlgorithm(pool, action); }
 		catch (err) { LinearLoop(pool, action); }
 	},
-	AssignLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; }
+	AssignLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; },
 	/// <summary>
 	///		- Ideally, this algorithm should be orderless
 	/// </summary>
