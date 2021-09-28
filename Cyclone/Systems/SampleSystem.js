@@ -3,7 +3,6 @@ export var sampleSystem =
 	requirements : [ "sampleComponent","transform" ],
 	Update : function(entity)
 	{
-		console.log(entity);
-		entity.transform.rotation.y += entity.sampleComponent.speed;
+		entity.components.transform.rotation.y += entity.components.sampleComponent.speed;
 	}
 }
