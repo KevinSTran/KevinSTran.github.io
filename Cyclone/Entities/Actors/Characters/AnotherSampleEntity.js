@@ -1,6 +1,6 @@
-export var sampleEntity =
+export var anotherSampleEntity =
 {
-	name : "Sample Text",
+	name : "Sample Sample Text",
 	components : 
 	{
 		life :
@@ -9,7 +9,7 @@ export var sampleEntity =
 		},
 		transform :
 		{
-			position : { x:-300, y:0, z:0 },
+			position : { x:300, y:0, z:0 },
 			rotation : { x:0, y:0, z:0 },
 			scale : { x:1, y:1, z:1 }
 		},
@@ -33,7 +33,7 @@ export var sampleEntity =
 		
 		sampleComponent : 
 		{
-			speed : 0.01
+			speed : - 0.02
 		}
 	}
 }

@@ -2,6 +2,9 @@
 export const algorithm =
 {
 	/// <summary>
+	/// 	LoopThrough:
+	/// 	- Uses a function to perform an action upon every
+	///       object in the provided pool array
 	///		- Ideally, this algorithm should be orderless
 	/// </summary>
 	/// <param name="pool">
