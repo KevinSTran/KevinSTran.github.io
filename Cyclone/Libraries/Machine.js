@@ -29,6 +29,7 @@ function AcquireReadyEntities(system, entities, algorithm)
 			{
 				result &= algorithm.SearchFor(Object.keys(entity.components), function(name){ return name === requirement; }).doesExist;
 			});
+			return result;
 		} 
 	);
 }
