@@ -8,7 +8,7 @@ export const machine = {
 			systems,
 			function(system)
 			{
-				readyEntities = AcquireReadyEntities(system, entities, algorithm);
+				var readyEntities = AcquireReadyEntities(system, entities, algorithm);
 				console.log(readyEntities);
 				algorithm.LoopThrough(readyEntities, system.Update); 
 			}
