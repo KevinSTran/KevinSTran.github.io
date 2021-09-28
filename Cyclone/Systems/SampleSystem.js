@@ -4,6 +4,5 @@ export var sampleSystem =
 	Update : function(entity)
 	{
 		entity.rotation.y += entity.sampleComponent.speed;
-		console.log(entity.rotation.y);
 	}
 }

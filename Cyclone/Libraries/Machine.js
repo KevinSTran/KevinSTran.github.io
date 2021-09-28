@@ -22,6 +22,7 @@ function AcquireReadyEntities(system, entities, algorithm)
 			var result = true;
 			algorithm.LoopThrough(system.requirements, function(requirement) 
 			{
+				console.log(requirement + " : " + Object.keys(entity.components));
 				result &= algorithm.SearchFor(Object.keys(entity.components), function(name){ return name === requirement; }).doesExist;
 			});
 		} 
