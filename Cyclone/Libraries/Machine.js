@@ -4,7 +4,7 @@
 export const machine = 
 {
 	Open : function(entities, systems, library)    { RunSystems("Open", entities, systems, library); },
-	Begin : function(entities, systems, library)   { RunSystems("Begin", entities, systems, library); },
+	Begin : function(entities, systems, library)   { console.log(library); RunSystems("Begin", entities, systems, library); },
 	Update : function(entities, systems, library)  { RunSystems("Update", entities, systems, library); },
 	Collide : function(entities, systems, library) { RunSystems("Collide", entities, systems, library); },
 	Finish : function(entities, systems, library)  { RunSystems("Finish", entities, systems, library); },
