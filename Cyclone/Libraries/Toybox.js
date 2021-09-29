@@ -13,7 +13,7 @@ export const toybox =
 		{
 			var result = { isReady:false };
 			this.addMesh(entity, result); 
-			this.toys.push( function() { if (result.isReady) result.UpdateTransform(result.mesh, entity.components.transform); } );
+			this.toys.push( function() { if (result.isReady) result.updateTransform(result.mesh, entity.components.transform); } );
 		}
 		catch (err) { console.log(err); }
 	},
