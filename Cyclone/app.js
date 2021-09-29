@@ -5,11 +5,11 @@ import { toybox } from "./Libraries/Toybox.js";
 import { source } from "./Libraries/Source.js";
 
 const library =
-[
+{
 	algorithm,
 	machine,
 	toybox,
 	source
-];
+};
 
 export const app = { module, library };
