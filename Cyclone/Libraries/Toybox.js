@@ -12,7 +12,7 @@ export const toybox =
 		try 
 		{
 			var result = { isReady:false };
-			this.addMesh(entity.components.mesh.source, result); 
+			this.addMesh(entity, result); 
 			this.toys.push( function() { if (result.isReady) result.UpdateTransform(result.mesh, entity.components.transform); } );
 		}
 		catch (err) { console.log(err); }
