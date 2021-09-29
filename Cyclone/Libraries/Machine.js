@@ -1,34 +1,48 @@
-export const machine = {
-	Start : function() { console.log("MAH"); },
-	Update : function(entities, systems, algorithm) 
-	{
-		if (entities === undefined || systems === undefined || algorithm === undefined) return;
-		algorithm.LoopThrough
-		(	
-			systems,
-			function(system)
-			{
-				var readyEntities = AcquireReadyEntities(system, entities, algorithm);
-				algorithm.LoopThrough(readyEntities, system.Update); 
-			}
-		);
-	},
-	End : function() { console.log("I SAID THERE IS AN ALIEN BUT YOU DON'T EVER LISTEN TO ME"); }
+
+// TODO: Turn to array and cycle through array
+
+export const machine = 
+{
+	Open : function(entities, systems, library)    { RunSystems("Open", entities, systems, library); },
+	Begin : function(entities, systems, library)   { RunSystems("Begin", entities, systems, library); },
+	Update : function(entities, systems, library)  { RunSystems("Update", entities, systems, library); },
+	Collide : function(entities, systems, library) { RunSystems("Collide", entities, systems, library); },
+	Finish : function(entities, systems, library)  { RunSystems("Finish", entities, systems, library); },
+	Close : function(entities, systems, library)   { RunSystems("Close", entities, systems, library);  }
 }
 
-function AcquireReadyEntities(system, entities, algorithm)
+function RunSystems(key, entities, systems, library)
 {
-	return algorithm.GrabFrom
+	if (entities === undefined || systems === undefined || library === undefined) return;
+	library.algorithm.LoopThrough
+	(	
+		systems,
+		function(system) { RunSystem(key, system, entities, library); }
+	);
+}
+function RunSystem(key, system, entities, library)
+{
+	if (key in system)
+	{
+		var readyEntities = AcquireReadyEntities(system, entities, library);
+		library.algorithm.LoopThrough(readyEntities, system[key]);
+	}
+}
+
+function AcquireReadyEntities(system, entities, library)
+{
+	return library.algorithm.GrabFrom
 	(
 		entities, 
-		function(entity) 
-		{
-			var result = true;
-			algorithm.LoopThrough(system.requirements, function(requirement) 
-			{
-				result &= algorithm.SearchFor(Object.keys(entity.components), function(name){ return name === requirement; }).doesExist;
-			});
-			return result;
-		} 
+		function(entity) { return IsEntityCompatible(entity, system, library); }
 	);
+}
+function IsEntityCompatible(entity, system, library)
+{
+	var result = true;
+	library.algorithm.LoopThrough(system.requirements, function(requirement) 
+	{
+		result &= library.algorithm.SearchFor(Object.keys(entity.components), function(name){ return name === requirement; }).doesExist;
+	});
+	return result;
 }

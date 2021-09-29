@@ -1,4 +1,3 @@
-// TODO: Algorithm machine
 export const algorithm =
 {
 	/// <summary>
@@ -16,9 +15,9 @@ export const algorithm =
 		try { this.loopAlgorithm(pool, action); }
 		catch (err) { LinearLoop(pool, action); }
 	},
-	AssignLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; },
+	AttachLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; },
 	/// <summary>
-	///		- Ideally, this algorithm should be orderless
+	///		- Algorithm will perform an uninformed search 
 	/// </summary>
 	/// <param name="action">
 	/// </param>
@@ -36,13 +35,13 @@ export const algorithm =
 		try { return this.searchAlgorithm(pool, meetsRequirements); }
 		catch (err) { return LinearSearch(pool, meetsRequirements); }
 	},
-	AssignSearchAlgorithm : function(newAlgorithm) { this.searchAlgorithm = newAlgorithm; },
+	AttachSearchAlgorithm : function(newAlgorithm) { this.searchAlgorithm = newAlgorithm; },
 	GrabFrom : function(pool, meetsRequirements)
 	{
 		try { return this.grabAlgorithm(pool, meetsRequirements); }
 		catch (err) { return LinearGrab(pool, meetsRequirements); }
 	},
-	AssignGrabAlgorithm : function(newAlgorithm) { this.grabAlgorithm = newAlgorithm; }
+	AttachGrabAlgorithm : function(newAlgorithm) { this.grabAlgorithm = newAlgorithm; }
 }
 
 function LinearLoop(pool, action)
