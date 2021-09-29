@@ -28,5 +28,5 @@ export const source =
 		return this.Acquire(folders.slice(1), path + "/" + folders[0]);
 	},
 	
-	AcquireModelsLocation : function () { return this.Acquire( [this.header, this.serverLocation, this.rootLocation, this.modelsLocation], "" );  }
+	AcquireModelsLocation : function () { return this.Acquire( [this.serverLocation, this.rootLocation, this.modelsLocation], this.header );  }
 }
