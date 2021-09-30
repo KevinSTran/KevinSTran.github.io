@@ -1,4 +1,4 @@
-export var meshEntrance =
+export const meshEntrance =
 {
 	// TODO: Only load on its own scene entrance
 	requirements : [ "transform","mesh" ],

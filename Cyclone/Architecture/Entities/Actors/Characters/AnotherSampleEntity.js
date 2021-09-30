@@ -1,4 +1,4 @@
-export var anotherSampleEntity =
+export const anotherSampleEntity =
 {
 	name : "Sample Sample Text",
 	components : 
