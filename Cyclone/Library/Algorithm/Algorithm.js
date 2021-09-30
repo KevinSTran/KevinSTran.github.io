@@ -1,3 +1,4 @@
+import { algorithm_linear } from "./Algorithm_Linear.js"
 export const algorithm =
 {
 	/// <summary>
@@ -15,7 +16,7 @@ export const algorithm =
 	LoopThrough : function(pool, action, isReversed)
 	{
 		try { this.loopAlgorithm(pool, action, isReversed); }
-		catch (err) { LinearLoop(pool, action, isReversed); }
+		catch (err) { algorithm_linear.LoopThrough(pool, action, isReversed); }
 	},
 	AttachLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; },
 	/// <summary>
@@ -35,44 +36,13 @@ export const algorithm =
 	SearchFor : function(pool, meetsRequirements)
 	{
 		try { return this.searchAlgorithm(pool, meetsRequirements); }
-		catch (err) { return LinearSearch(pool, meetsRequirements); }
+		catch (err) { return algorithm_linear.SearchFor(pool, meetsRequirements); }
 	},
 	AttachSearchAlgorithm : function(newAlgorithm) { this.searchAlgorithm = newAlgorithm; },
 	GrabFrom : function(pool, meetsRequirements)
 	{
 		try { return this.grabAlgorithm(pool, meetsRequirements); }
-		catch (err) { return LinearGrab(pool, meetsRequirements); }
+		catch (err) { return algorithm_linear.GrabFrom(pool, meetsRequirements); }
 	},
 	AttachGrabAlgorithm : function(newAlgorithm) { this.grabAlgorithm = newAlgorithm; }
-}
-
-function LinearLoop(pool, action, isReversed)
-{
-	if (pool === undefined || action === undefined) return;
-	var canReverse = isReversed !== undefined && isReversed;
-	for (var i = (canReverse ? pool.length - 1 : 0); (canReverse ? i >= 0 : i < pool.length); i += (canReverse ? -1 : 1)) 
-		try { action(pool[i]); } 
-		catch (err) 
-		{
-			console.log(err); 
-			console.log("Terminating the loop ..."); 
-			break;
-		}
-}
-
-function LinearSearch(pool, meetsRequirements)
-{
-	if (pool === undefined || meetsRequirements === undefined) return { doesExist:false };
-	for (var i = 0; i < pool.length; i++)
-		if (meetsRequirements(pool[i])) return { target:pool[i], doesExist:true };
-	return { doesExist:false };
-}
-
-function LinearGrab(pool, meetsRequirements)
-{
-	if (pool === undefined || meetsRequirements === undefined) return [];
-	var result = [];
-	for (var i = 0; i < pool.length; i++)
-		if (meetsRequirements(pool[i])) result.push(pool[i]);
-	return result;
 }
