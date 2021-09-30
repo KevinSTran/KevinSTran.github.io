@@ -3,13 +3,17 @@ import { algorithm } from "./Libraries/Algorithm.js";
 import { machine } from "./Libraries/Machine.js";
 import { toybox } from "./Libraries/Toybox.js";
 import { source } from "./Libraries/Source.js";
+import { meta } from "./Libraries/Meta.js";
 
 const library =
 {
 	algorithm,
 	machine,
 	toybox,
-	source
+	source,
+	meta
 };
 
-export const app = { module, library };
+const function Run() { machine.run(module, library); }
+
+export const app = { module, library, Run };

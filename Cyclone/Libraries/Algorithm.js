@@ -10,10 +10,10 @@ export const algorithm =
 	/// </param>
 	/// <param name="action">
 	/// </param>
-	LoopThrough : function(pool, action)
+	LoopThrough : function(pool, action, isReversed)
 	{
-		try { this.loopAlgorithm(pool, action); }
-		catch (err) { LinearLoop(pool, action); }
+		try { this.loopAlgorithm(pool, action, isReversed); }
+		catch (err) { LinearLoop(pool, action, isReversed); }
 	},
 	AttachLoopAlgorithm : function(newAlgorithm) { this.loopAlgorithm = newAlgorithm; },
 	/// <summary>
@@ -44,10 +44,11 @@ export const algorithm =
 	AttachGrabAlgorithm : function(newAlgorithm) { this.grabAlgorithm = newAlgorithm; }
 }
 
-function LinearLoop(pool, action)
+function LinearLoop(pool, action, isReversed)
 {
 	if (pool === undefined || action === undefined) return;
-	for (var i = 0; i < pool.length; i++) 
+	var canReverse = isReversed !== undefined && isReversed;
+	for (var i = (canReverse ? pool.length - 1 : 0); (canReverse ? i >= 0 : i < pool.length); i += (canReverse ? -1 : 1)) 
 		try { action(pool[i]); } 
 		catch (err) 
 		{
