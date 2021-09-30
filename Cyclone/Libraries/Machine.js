@@ -5,6 +5,8 @@ export const machine =
 		this.Assemble();
 		library.algorithm.LoopThrough(this.bus, function(e) 
 		{
+			console.log(this);
+			console.log(this.Operate);
 			this.Operate(e, module.entities, module.systems, library);
 		} );
 	},
