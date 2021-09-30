@@ -28,7 +28,7 @@ export const meta =
 	/// </param>
 	Adjust : function(entity, key, value)
 	{
-		if (!("meta" in entity) || !(key in entity.meta)) this.AddTo(entity, key, value);
+		if (!("meta" in entity) || !(key in entity.meta)) this.Note(entity, key, value);
 		else entity[key] = value;
 	},
 	AcquireFrom(entity, key)

@@ -51,7 +51,7 @@ export const machine =
 		// 5. Draw
 		{
 			isReady : true,
-			Run : function(entities, systems, library) { if ("draw" in this) draw(); },
+			Run : function(entities, systems, library) { if ("draw" in this) this.draw(); },
 			CanRun : function() { return this.isReady; },
 			SwitchOff : function() { this.isReady = false; }
 		},
