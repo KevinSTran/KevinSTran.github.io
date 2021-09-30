@@ -87,7 +87,7 @@ export const machine =
 				this.collideEvent.SwitchOff();
 				this.summariseEvent.SwitchOff();
 				this.drawEvent.SwitchOff();
-			}
+			},
 			
 			/// <summary>
 			/// 	ReadyEntity:
