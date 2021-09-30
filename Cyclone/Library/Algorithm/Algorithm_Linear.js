@@ -1,4 +1,4 @@
-export const var algorithm_linear = 
+export const algorithm_linear = 
 {
 	function LoopThrough(pool, action, isReversed)
 	{
