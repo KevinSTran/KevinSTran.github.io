@@ -3,10 +3,8 @@ export const machine =
 	Run : function(module, library)
 	{
 		this.Assemble();
-		library.algorithm.LoopThrough(this.bus, function(e) 
-		{
-			this.Operate(e, module.entities, module.systems, library);
-		} );
+		var Operate = function(e) { this.Operate(e, module.entities, module.systems, library); }
+		library.algorithm.LoopThrough(this.bus, Operate);
 	},
 	Assemble : function()
 	{
