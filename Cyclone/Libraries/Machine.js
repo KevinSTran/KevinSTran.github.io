@@ -159,6 +159,9 @@ function AcquireReadyEntities(system, entities, library, canRunOnce, key)
 		entities, 
 		function(entity) 
 		{
+			console.log(key);
+			console.log(canRunOnce);
+			console.log(entity);
 			return IsEntityCompatible(entity, system, library) &&
 			(
 				canRunOnce === undefined || !canRunOnce ||
