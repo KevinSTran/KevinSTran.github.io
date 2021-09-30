@@ -14,7 +14,7 @@ export const meta =
 	Note : function(entity, key, value)
 	{
 		if (!("meta" in entity)) entity.meta = {};
-		if (!("key" in entity.meta)) entity[key] = value;
+		if (!("key" in entity.meta)) entity.meta[key] = value;
 	},
 	/// <summary>
 	/// 	Adjust:
@@ -29,7 +29,7 @@ export const meta =
 	Adjust : function(entity, key, value)
 	{
 		if (!("meta" in entity) || !(key in entity.meta)) this.Note(entity, key, value);
-		else entity[key] = value;
+		else entity.meta[key] = value;
 	},
 	AcquireFrom(entity, key)
 	{
