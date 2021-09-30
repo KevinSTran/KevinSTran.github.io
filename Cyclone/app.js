@@ -14,6 +14,6 @@ const library =
 	meta
 };
 
-const function Run() { machine.run(module, library); }
+const Run = function() { machine.run(module, library); }
 
 export const app = { module, library, Run };
