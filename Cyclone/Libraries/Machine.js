@@ -3,12 +3,7 @@ export const machine =
 	Run : function(module, library)
 	{
 		this.Assemble();
-		library.algorithm.LoopThrough(this.bus, function(e) 
-		{
-			console.log(this);
-			console.log(this.Operate);
-			this.Operate(e, module.entities, module.systems, library);
-		} );
+		library.algorithm.LoopThrough(this.bus, function(e) { Operate(e, module.entities, module.systems, library); });
 	},
 	Assemble : function()
 	{
@@ -17,7 +12,6 @@ export const machine =
 		this.isAssembled = true;
 	},
 	isAssembled : false,
-	Operate : function(e, entities, systems, library) { console.log(e); if (e.CanRun()) e.Run(entities, systems, library); },
 	bus : 
 	[
 		// 0. Open
@@ -117,6 +111,7 @@ export const machine =
 	Quit : function() { this.bus[7].ReadyUp(); },
 	AttachDraw(newDraw) { this.bus[5].draw = newDraw; }
 }
+function Operate(e, entities, systems, library) { if (e.CanRun()) e.Run(entities, systems, library); }
 // TODO: Customisable "RunSystems" variables for collision systems
 function RunSystems(key, entities, systems, library, canRunOnce)
 {
