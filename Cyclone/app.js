@@ -1,9 +1,10 @@
 import { module } from "./index.js";
-import { algorithm } from "./Libraries/Algorithm.js";
-import { machine } from "./Libraries/Machine.js";
-import { toybox } from "./Libraries/Toybox.js";
-import { source } from "./Libraries/Source.js";
-import { meta } from "./Libraries/Meta.js";
+
+import { algorithm } from "./Library/Algorithm.js";
+import { machine } from "./Library/Machine.js";
+import { toybox } from "./Library/Toybox.js";
+import { source } from "./Library/Source.js";
+import { meta } from "./Library/Meta.js";
 
 const library =
 {

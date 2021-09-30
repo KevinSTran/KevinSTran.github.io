@@ -10,6 +10,8 @@ export const algorithm =
 	/// </param>
 	/// <param name="action">
 	/// </param>
+	/// <param name="isReversed">
+	/// </param>
 	LoopThrough : function(pool, action, isReversed)
 	{
 		try { this.loopAlgorithm(pool, action, isReversed); }

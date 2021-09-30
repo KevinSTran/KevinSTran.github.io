@@ -1,8 +1,8 @@
-import { sampleEntity } from "./Entities/Actors/Characters/SampleEntity.js";
-import { anotherSampleEntity } from "./Entities/Actors/Characters/AnotherSampleEntity.js";
+import { sampleEntity } from "./Architecture/Entities/Actors/Characters/SampleEntity.js";
+import { anotherSampleEntity } from "./Architecture/Entities/Actors/Characters/AnotherSampleEntity.js";
 
-import { meshEntrance } from "./Systems/Mesh/MeshEntrance.js";
-import { sampleSystem } from "./Systems/SampleText/SampleSystem.js";
+import { meshEntrance } from "./Architecture/Systems/Mesh/MeshEntrance.js";
+import { sampleSystem } from "./Architecture/Systems/SampleText/SampleSystem.js";
 
 const entities = 
 [
