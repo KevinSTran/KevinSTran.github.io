@@ -1,6 +1,6 @@
 export const algorithm_linear = 
 {
-	function LoopThrough(pool, action, isReversed)
+	LoopThrough : function(pool, action, isReversed)
 	{
 		if (pool === undefined || action === undefined) return;
 		var canReverse = isReversed !== undefined && isReversed;
@@ -12,17 +12,17 @@ export const algorithm_linear =
 				console.log("Terminating the loop ..."); 
 				break;
 			}
-	}
+	},
 
-	function SearchFor(pool, meetsRequirements)
+	SearchFor : function(pool, meetsRequirements)
 	{
 		if (pool === undefined || meetsRequirements === undefined) return { doesExist:false };
 		for (var i = 0; i < pool.length; i++)
 			if (meetsRequirements(pool[i])) return { target:pool[i], doesExist:true };
 		return { doesExist:false };
-	}
+	},
 
-	function GrabFrom(pool, meetsRequirements)
+	GrabFrom : function(pool, meetsRequirements)
 	{
 		if (pool === undefined || meetsRequirements === undefined) return [];
 		var result = [];
