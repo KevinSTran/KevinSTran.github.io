@@ -3,10 +3,10 @@ export const machine =
 	Run : function(module, library)
 	{
 		this.Assemble();
-		console.log(this);
-		console.log(this.Operate);
-		var Operate = function(e) { this.Operate(e, module.entities, module.systems, library); }
-		library.algorithm.LoopThrough(this.bus, Operate);
+		library.algorithm.LoopThrough(this.bus, function(e) 
+		{
+			this.Operate(e, module.entities, module.systems, library);
+		} );
 	},
 	Assemble : function()
 	{
@@ -15,7 +15,7 @@ export const machine =
 		this.isAssembled = true;
 	},
 	isAssembled : false,
-	Operate : function(e, entities, systems, library) { if (e.CanRun()) e.Run(entities, systems, library); },
+	Operate : function(e, entities, systems, library) { console.log(e); if (e.CanRun()) e.Run(entities, systems, library); },
 	bus : 
 	[
 		// 0. Open
