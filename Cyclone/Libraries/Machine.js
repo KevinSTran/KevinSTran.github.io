@@ -86,7 +86,7 @@ export const machine =
 				this.updateEvent.SwitchOff();
 				this.collideEvent.SwitchOff();
 				this.summariseEvent.SwitchOff();
-				this.drawEvent.SwitchOff():
+				this.drawEvent.SwitchOff();
 			}
 			
 			/// <summary>
