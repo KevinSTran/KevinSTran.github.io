@@ -35,4 +35,4 @@ export const source =
 	},
 	
 	AcquireModelsLocation : function () { return this.Acquire( [this.serverLocation, this.rootLocation, this.contentFolder, this.modelsLocation], this.header );  }
-}
+};

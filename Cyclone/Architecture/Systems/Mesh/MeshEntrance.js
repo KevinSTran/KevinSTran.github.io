@@ -7,4 +7,4 @@ export const meshEntrance =
 		library.meta.Note(entity, "loaded", 0);
 		library.toybox.Add(entity);
 	}
-}
+};

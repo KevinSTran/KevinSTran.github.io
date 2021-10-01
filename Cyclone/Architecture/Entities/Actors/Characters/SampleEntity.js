@@ -36,4 +36,4 @@ export const sampleEntity =
 			speed : 0.01
 		}
 	}
-}
+};

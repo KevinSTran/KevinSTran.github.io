@@ -18,4 +18,4 @@ export const toybox =
 		catch (err) { console.log(err); }
 	},
 	AttachAdd : function(newAddMesh) { this.addMesh = newAddMesh; }
-}
+};

@@ -30,4 +30,4 @@ export const algorithm_linear =
 			if (meetsRequirements(pool[i])) result.push(pool[i]);
 		return result;
 	}
-}
+};

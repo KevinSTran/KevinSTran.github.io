@@ -36,4 +36,4 @@ export const meta =
 		if (!("meta" in entity) || !(key in entity.meta)) return undefined;
 		return entity.meta[key];
 	}
-}
+};

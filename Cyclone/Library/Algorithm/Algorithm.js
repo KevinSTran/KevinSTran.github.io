@@ -1,4 +1,4 @@
-import { algorithm_linear } from "./Algorithm_Linear.js"
+import { algorithm_linear } from "./Algorithm_Linear.js";
 export const algorithm =
 {
 	/// <summary>
@@ -45,4 +45,4 @@ export const algorithm =
 		catch (err) { return algorithm_linear.GrabFrom(pool, meetsRequirements); }
 	},
 	AttachGrabAlgorithm : function(newAlgorithm) { this.grabAlgorithm = newAlgorithm; }
-}
+};

@@ -5,4 +5,4 @@ export const sampleSystem =
 	{
 		entity.components.transform.rotation.y += entity.components.sampleComponent.speed;
 	}
-}
+};
