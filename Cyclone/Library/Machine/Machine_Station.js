@@ -2,15 +2,23 @@ export const machine_station =
 {
 	Operate : function(state, entities, systems, library) { if (state.CanRun()) state.Run(entities, systems, library); },
 	// TODO: Customisable "RunSystems" variables for collision systems
-	RunSystems : function(key, entities, systems, library, canRunOnce)
+	RunSystems : function(key, entities, systems, library, canRunOnce, additionalAction)
 	{
 		if (entities === undefined || systems === undefined || library === undefined) return;
 		library.algorithm.LoopThrough
 		(	
 			systems,
-			function(system) { this.RunSystem(key, system, entities, library, canRunOnce); }
+			function(system) { machine_station_steps.RunSystem
+			(
+				key, system, entities, library, canRunOnce, additionalAction,
+				machine_station_steps.AcquireReadyEntities(system, entities, library, canRunOnce, key, machine_station_steps.IsEntityCompatible);
+				
+			); }
 		);
-	},
+	}
+};
+const machine_station_steps =
+{
 	/// <summary>
 	/// </summary>
 	/// <param name="">
@@ -27,11 +35,10 @@ export const machine_station =
 	/// </param>
 	/// <param name="">
 	/// </param>
-	RunSystem : function(key, system, entities, library, canRunOnce, additionalAction)
+	RunSystem : function(key, system, entities, library, canRunOnce, additionalAction, readyEntities)
 	{
 		if (key in system)
 		{
-			var readyEntities = this.AcquireReadyEntities(system, entities, library, canRunOnce, key);
 			library.algorithm.LoopThrough(readyEntities, function(entity) 
 			{
 				system[key](entity, library); 
@@ -41,14 +48,14 @@ export const machine_station =
 		}
 	},
 
-	AcquireReadyEntities : function(system, entities, library, canRunOnce, key)
+	AcquireReadyEntities : function(system, entities, library, canRunOnce, key, isEntityCompatible)
 	{
 		return library.algorithm.GrabFrom
 		(
 			entities, 
 			function(entity) 
 			{
-				return this.IsEntityCompatible(entity, system, library) &&
+				return isEntityCompatible(entity, system, library) &&
 				(
 					canRunOnce === undefined || !canRunOnce ||
 					library.meta.AcquireFrom(entity, "hasRun" + key) === undefined ||
@@ -66,4 +73,4 @@ export const machine_station =
 		});
 		return result;
 	}
-}
+};
