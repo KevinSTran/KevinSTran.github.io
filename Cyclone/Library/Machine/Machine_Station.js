@@ -11,8 +11,7 @@ export const machine_station =
 			function(system) { machine_station_steps.RunSystem
 			(
 				key, system, entities, library, canRunOnce, additionalAction,
-				machine_station_steps.AcquireReadyEntities(system, entities, library, canRunOnce, key, machine_station_steps.IsEntityCompatible);
-				
+				machine_station_steps.AcquireReadyEntities(system, entities, library, canRunOnce, key, machine_station_steps.IsEntityCompatible)
 			); }
 		);
 	}
