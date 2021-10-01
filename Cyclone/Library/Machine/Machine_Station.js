@@ -56,7 +56,7 @@ export const machine_station =
 				); 
 			}
 		);
-	}
+	},
 	IsEntityCompatible : function(entity, system, library)
 	{
 		var result = true;
